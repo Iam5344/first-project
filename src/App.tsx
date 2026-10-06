@@ -1,19 +1,12 @@
-function AboutMe() {
-  return (
-    <section>
-      <h2>Особиста інформація</h2>
-      <p><strong>ПІБ:</strong> Глєб</p>
-      <p><strong>Контактний телефон:</strong> +380 XX XXX XX XX</p>
-      <p><strong>Електронна адреса:</strong> gleb@example.com</p>
-    </section>
-  );
-}
+import { CourseReview } from './components/CourseReview';
 
 export default function App() {
   return (
-    <main style={{ padding: '20px', fontFamily: 'sans-serif' }}>
-      <h1>Завдання 1: Інформація про себе</h1>
-      <AboutMe />
+    <main style={{ maxWidth: '600px', margin: '0 auto', padding: '20px', fontFamily: 'sans-serif' }}>
+      <h1>Відгуки про навчання</h1>
+      <section style={{ marginTop: '20px' }}>
+        <CourseReview />
+      </section>
     </main>
   );
 }
