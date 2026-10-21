@@ -6,10 +6,8 @@ export function StudyReminder() {
   const [seconds, setSeconds] = useState<number>(5);
   const [isTimerRunning, setIsTimerRunning] = useState<boolean>(false);
 
-  // useRef для збереження ID таймера
   const timerIdRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Очищення таймера при розмонтуванні компонента
   useEffect(() => {
     return () => {
       if (timerIdRef.current) {
@@ -31,7 +29,6 @@ export function StudyReminder() {
       return;
     }
 
-    // Якщо таймер вже запущено, скасовуємо попередній
     if (timerIdRef.current) {
       clearTimeout(timerIdRef.current);
     }
@@ -39,7 +36,7 @@ export function StudyReminder() {
     setIsTimerRunning(true);
     toast.success(`Таймер встановлено на ${seconds} сек.`);
 
-    // Зберігаємо ID від setTimeout у useRef
+
     timerIdRef.current = setTimeout(() => {
       toast(text, {
         duration: 6000,
@@ -76,9 +73,7 @@ export function StudyReminder() {
         boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
         fontFamily: 'sans-serif'
       }}
-    >
-      {/* Провайдер для відображення сповіщень */}
-      <Toaster position="top-right" reverseOrder={false} />
+    >      <Toaster position="top-right" reverseOrder={false} />
 
       <h3 style={{ marginTop: 0, marginBottom: '16px' }}>
         ⏰ Нагадування про навчання
