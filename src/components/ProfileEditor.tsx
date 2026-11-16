@@ -61,14 +61,14 @@ export function ProfileEditor() {
         backgroundColor: '#ffffff',
       }}
     >
-      {/* Ліва колонка: Форма */}
+
       <form
         onSubmit={handleSubmit(onSubmit)}
         style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '14px' }}
       >
         <h3 style={{ margin: 0 }}>Редагування профілю</h3>
 
-        {/* 1. ПІБ студента */}
+
         <div>
           <label style={{ display: 'block', marginBottom: '4px', fontWeight: 'bold' }}>
             ПІБ студента:
@@ -80,7 +80,6 @@ export function ProfileEditor() {
           {errors.fullName && <span style={{ color: 'red', fontSize: '12px' }}>{errors.fullName.message}</span>}
         </div>
 
-        {/* 2. Електронна пошта */}
         <div>
           <label style={{ display: 'block', marginBottom: '4px', fontWeight: 'bold' }}>
             Електронна пошта:
@@ -96,7 +95,7 @@ export function ProfileEditor() {
           {errors.email && <span style={{ color: 'red', fontSize: '12px' }}>{errors.email.message}</span>}
         </div>
 
-        {/* 3. Динамічні номери телефонів */}
+
         <div>
           <label style={{ display: 'block', marginBottom: '4px', fontWeight: 'bold' }}>
             Номери телефонів:
@@ -142,7 +141,7 @@ export function ProfileEditor() {
           </button>
         </div>
 
-        {/* 4. Володіння мовами через Controller + react-select */}
+
         <div>
           <label style={{ display: 'block', marginBottom: '4px', fontWeight: 'bold' }}>
             Володіння мовами:
@@ -178,7 +177,6 @@ export function ProfileEditor() {
         </button>
       </form>
 
-      {/* Права колонка: Прев'ю профілю */}
       <div
         style={{
           flex: 1,
